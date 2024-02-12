@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { TareasService } from '../tareas.service';
 import { Modelo } from '../modelo';
 
@@ -10,19 +11,19 @@ import { Modelo } from '../modelo';
 export class AgregarTareaComponent {
   modelo: Modelo = {} as Modelo;
 
-  constructor(private tareasService: TareasService) {}
+  constructor(private router: Router, private tareasService: TareasService) {}
 
   agregarTarea() {
     if (this.modelo.completado == null) {
-      
       this.modelo.completado = false;
-
     }
     
     this.tareasService.agregarTarea(this.modelo).subscribe(() => { 
+      // Reinicia el modelo después de agregar la tarea
+      this.modelo = {} as Modelo;
       
-      this.modelo = {} as Modelo; // Reinicia el modelo después de agregar la tarea
-
+      // Redirecciona a la lista de tareas
+      this.router.navigate(['/lista-tareas']);
     });
   }
 }

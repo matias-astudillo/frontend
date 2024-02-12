@@ -1,1 +1,6 @@
-<p>editar-tarea works!</p>
+<h2>Editar Tarea</h2>
+<div *ngIf="modelo">
+  <label>Estado:</label>
+  <input type="checkbox" [(ngModel)]="modelo.completado" name="completado">
+  <button (click)="actualizarEstado()">Actualizar</button>
+</div>
