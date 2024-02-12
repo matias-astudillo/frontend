@@ -1,0 +1,11 @@
+<p>agregar-tarea works!</p>
+<h2>Agregar Tarea</h2>
+<form (ngSubmit)="agregarTarea()">
+  <label>ID:</label>
+  <input type="number" [(ngModel)]="modelo.id" name="id" required>
+  <label>Nombre:</label>
+  <input type="text" [(ngModel)]="modelo.nombre" name="nombre" required>
+  <label>Estado (Completado):</label>
+  <input type="checkbox" [(ngModel)]="modelo.completado" name="completado">
+  <button type="submit">Agregar</button>
+</form>
