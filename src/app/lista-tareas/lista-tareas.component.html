@@ -3,7 +3,7 @@
 <ul>
   <li *ngFor="let tarea of tareas">
     {{ tarea.nombre }} - {{ tarea.completado ? 'Completado' : 'Pendiente' }}
-  <!--  <button (click)="eliminarTarea(tarea.id)">Eliminar</button>-->
-   <!-- <a [routerLink]="['/editar', tarea.id]">Editar</a>-->
+    <button (click)="eliminarTarea(tarea.id)">Eliminar</button>
+   <a [routerLink]="['/editar', tarea.id]">Editar</a>
   </li>
 </ul>
