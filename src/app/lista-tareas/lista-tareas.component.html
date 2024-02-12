@@ -1,0 +1,9 @@
+<p>lista-tareas works!</p>
+<h2>Lista de Tareas</h2>
+<ul>
+  <li *ngFor="let tarea of tareas">
+    {{ tarea.nombre }} - {{ tarea.completado ? 'Completado' : 'Pendiente' }}
+  <!--  <button (click)="eliminarTarea(tarea.id)">Eliminar</button>-->
+   <!-- <a [routerLink]="['/editar', tarea.id]">Editar</a>-->
+  </li>
+</ul>
